@@ -44,9 +44,9 @@ Get (RETURN GREATNESS, SENSOR MODEL)
 GREATNESS OF RETURN: KPA, BAR, PSI, CMH2O (DEFAULT: KPA)
 SENSOR MODEL: MXP5010 (DEFAULT MXP5010)
 */
-float Pressure::Get( uint8_t ref,  uint8_t gran){
+float Pressure::Get( uint8_t model,  uint8_t gran){
         int val = analogRead(PinAn); // GET ADC VALUE
-        float v_pressure = Modo(val, ref); // CALCULATE PRESSURE BASED MODEL
+        float v_pressure = Modo(val, model); // CALCULATE PRESSURE BASED MODEL
         switch (gran)
         {
             
