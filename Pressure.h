@@ -1,6 +1,6 @@
 /*
 Lib Pressure
-version: 0.0.1
+version: 1.0.0
 author: Leandro L. Nascimento 
 sentence: Pressure differential MXP serie
 paragraph: library for reading differential pressure / gauge sensors from the manufacturer NXP. With pressure return in KPA, PSI, BAR, CMH2O quantities.
