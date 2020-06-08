@@ -1,6 +1,6 @@
 #ifndef Pressure_h
     #define Pressure_h
-    #define LIBRARY_VERSION  0.0.1
+    #define LIBRARY_VERSION  1.0.0
     #include "Arduino.h"
 class Pressure 
 {
