@@ -1,19 +1,19 @@
 {
-  " name " : " Pressure " ,
-  " keywords " : " Pressure, MXP, Diferential, NXP " ,
-  " description " : "library for reading differential pressure / gauge sensors from the manufacturer NXP. With pressure return in KPA, PSI, BAR, CMH2O quantities." ,
-  " url " : " " ,
-  " include " : "Pressure_h" ,
-  " autores " :
+  "name" : "Pressure NXP Sensors Analog" ,
+  "keywords" : " Pressure, MXP, Diferential, NXP " ,
+  "description" : "library for reading differential pressure / gauge sensors from the manufacturer NXP. With pressure return in KPA, PSI, BAR, CMH2O quantities." ,
+  "url" : "https://github.com/LeandroLimaPRO/Pressure" ,
+  "include" : "Pressure_h" ,
+  "autores" :
   [
     {
-      " nome " : " Leandro L. Nascimento "
+      "nome" : "Leandro L. n, eng.leandroln@gmail.com"
     }
   ],
-  " repositório " :
+  "repositório" :
   {
-    " type " : " git " ,
-    " url " : " "
-  }
-  " frameworks " : " arduino "
+    "type" : "git" ,
+    "url" : "https://github.com/LeandroLimaPRO/Pressure"
+  },
+  "frameworks" : "arduino"
 }

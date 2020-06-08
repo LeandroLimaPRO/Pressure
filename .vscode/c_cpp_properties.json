@@ -1,0 +1,21 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "C:/Users/leo_l/.platformio/packages/framework-arduino-avr/cores/arduino",
+                "C:/Users/leo_l/.platformio/packages/toolchain-atmelavr@1.50400.190710/avr/include",
+                "C:/Users/leo_l/.platformio/packages/toolchain-atmelavr@1.50400.190710/lib/gcc/avr/5.4.0/include",
+                "C:/Users/leo_l/.platformio/packages/framework-arduino-avr/variants/standard"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "intelliSenseMode": "msvc-x64"
+        }
+    ],
+    "version": 4
+}
