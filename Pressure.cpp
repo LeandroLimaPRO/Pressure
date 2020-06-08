@@ -10,16 +10,16 @@ category: Sensor Analogic Pressure
 
 Pressure::Pressure(uint8_t pinAnalog)// obj Pressure, insert the analog pin
 {
-    PinAn = pinAnalog;
+    PinAn = pinAnalog; // PIN ANALOGC FOR GET VALUE
 }
 Pressure::Pressure(uint8_t pinAnalog, float vfso)// obj Pressure, insert the analog pin, then measure the AD voltage with a multimeter, and enter the value.
 {
-    PinAn = pinAnalog;
-    VFSO = vfso;
+    PinAn = pinAnalog; // PIN ANALOGC FOR GET VALUE
+    VFSO = vfso; // VOLTAGE OPERATION SENSOR.
 }
 void Pressure::Init()// Func. Initialize, set into setup
 {
-    pinMode(PinAn, INPUT);
+    pinMode(PinAn, INPUT); //SET PIN AS INPUT
 }
 
 float Pressure::Modo(float valor,  uint8_t Modo)// PRESSURE SENSOR MODEL
@@ -29,9 +29,11 @@ float Pressure::Modo(float valor,  uint8_t Modo)// PRESSURE SENSOR MODEL
     {
         
     case 0: // MXP5010
-         return ((((valor/1023)*VFSO)-0.2)/0.45); // FUNC. DE TRANFERENCIA DO SENSOR OBTIDO NO DATASHEET
+         return ((((valor/1023)*VFSO)-0.2)/0.45); // SENSOR TRANSFER FUNCTION OBTAINED FROM DATASHEET
         break;
-    
+    case 1: // MXP3700
+            return NULL; // INSERT TRANSFER FUNCTION IN THE PLACE OF "NULL"
+        break;
     default:// MXP5010 //// ADD DEFINE IN .H FOR OTHER MODELS END INSERT FUNCTION TRANSFER IN CASE N+1
         return ((((valor/1023)*VFSO)-0.2)/0.45);
         break;
