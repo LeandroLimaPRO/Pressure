@@ -12,7 +12,7 @@ Pressure::Pressure(uint8_t pinAnalog)// obj Pressure, insert the analog pin
 {
     PinAn = pinAnalog; // PIN ANALOGC FOR GET VALUE
 }
-Pressure::Pressure(uint8_t pinAnalog, float vfso)// obj Pressure, insert the analog pin, then measure the AD voltage with a multimeter, and enter the value.
+Pressure::Pressure(uint8_t pinAnalog, double vfso)// obj Pressure, insert the analog pin, then measure the AD voltage with a multimeter, and enter the value.
 {
     PinAn = pinAnalog; // PIN ANALOGC FOR GET VALUE
     VFSO = vfso; // VOLTAGE OPERATION SENSOR.
