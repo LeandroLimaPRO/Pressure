@@ -62,7 +62,7 @@ float Pressure::Get( uint8_t model,  uint8_t gran){
             return v_pressure/6.895;
             break;
         case 3: // CMH2O
-            return v_pressure*10.197;
+            return v_pressure*10.01972;
             break;
         default: // KPA
             return v_pressure;
