@@ -22,10 +22,10 @@ void Pressure::Init()// Func. Initialize, set into setup
     pinMode(PinAn, INPUT); //SET PIN AS INPUT
 }
 
-float Pressure::Modo(float valor,  uint8_t Modo)// PRESSURE SENSOR MODEL
+float Pressure::Modo(float valor,  uint8_t Model)// PRESSURE SENSOR MODEL
 {
     
-    switch (Modo)
+    switch (Model)
     {
         
     case 0: // MXP5010
@@ -40,7 +40,7 @@ float Pressure::Modo(float valor,  uint8_t Modo)// PRESSURE SENSOR MODEL
     }
 }
 /*
-Get (RETURN GREATNESS, SENSOR MODEL)
+Get (GREATNESS, SENSOR MODEL)
 GREATNESS OF RETURN: KPA, BAR, PSI, CMH2O (DEFAULT: KPA)
 SENSOR MODEL: MXP5010 (DEFAULT MXP5010)
 */
