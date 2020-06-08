@@ -1,0 +1,33 @@
+  
+#######################################
+# Syntax Coloring Map For PRESSURE Library
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+Pressure	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+Get	KEYWORD2
+Modo	KEYWORD2
+Init	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+MXP5010	LITERAL1
+MXP5050 LITERAL1
+MXP3700 LITERAL1
+
+# GRANDEZAS
+
+KPA	LITERAL1
+BAR	LITERAL1
+PSI	LITERAL1
+CMH2O	LITERAL1
