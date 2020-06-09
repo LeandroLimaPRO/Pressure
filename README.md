@@ -50,4 +50,8 @@ legend:
 👎 removed, 
 💻 in development
 ```
+## AUTHORS
++ Leandro L. (library developer)
++ Jessica Santos (mathematical modeler)
++ Valdioleno (electronic validation)
 #### By Leandro L. N.
