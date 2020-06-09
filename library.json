@@ -1,5 +1,5 @@
 {
-  "name" : "Pressure NXP Sensors Analog" ,
+  "name" : "NXP Pressure Sensors Analog" ,
   "keywords" : " Pressure, MXP, Diferential, NXP " ,
   "description" : "library for reading differential pressure / gauge sensors from the manufacturer NXP. With pressure return in KPA, PSI, BAR, CMH2O quantities." ,
   "url" : "https://github.com/LeandroLimaPRO/Pressure" ,

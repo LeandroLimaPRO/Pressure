@@ -1,3 +1,6 @@
+
+#ifndef Pressure_h
+#define Pressure_h
 /*
 Lib Pressure
 version: 1.0.0
@@ -6,8 +9,6 @@ sentence: Pressure differential MXP serie
 paragraph: library for reading differential pressure / gauge sensors from the manufacturer NXP. With pressure return in KPA, PSI, BAR, CMH2O quantities.
 category: Sensor Analogic Pressure
 */
-#ifndef Pressure_h
-#define Pressure_h
 #include "Arduino.h"
 class Pressure 
 {
@@ -22,14 +23,11 @@ class Pressure
             Pressure(uint8_t);
             Pressure(uint8_t, double);
             void Init();
-            float Get();
-            float Get( uint8_t);
-            float Get( uint8_t,  uint8_t);
-
+            float Get(uint8_t); // set model, for return value in KPA
+            float Get( uint8_t,  uint8_t); //set model and measure type
 
         private:
-
-            int vanalog;
+            int va__nalog;
             float pressure;
             float VFSO = 4.71;
             uint8_t PinAn;
