@@ -12,8 +12,9 @@ library for reading differential pressure / gauge sensors from the manufacturer 
 #include "Pressure.h"
 
 Pressure Sensor(A0);
-```
-Or with the help of a multimeter take the operating voltage from the microcontroller to calibrate the sensor.
+``` 
+Or with the help of a multimeter take the operating voltage from the microcontroller to calibrate the sensor:
+
 ```C++
 #include "Pressure.h"
 
