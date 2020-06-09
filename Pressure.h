@@ -22,15 +22,20 @@ class Pressure
             Pressure(uint8_t);
             Pressure(uint8_t, double);
             void Init();
+            float Get();
+            float Get( uint8_t);
             float Get( uint8_t,  uint8_t);
 
 
         private:
+
             int vanalog;
-            uint8_t PinAn;
             float pressure;
-            float Modo(float valor, uint8_t modo);
             float VFSO = 4.71;
+            uint8_t PinAn;
+
+            float Modo(float, uint8_t);
+            float measure_pressure(uint8_t, float);
 
 };
 #endif

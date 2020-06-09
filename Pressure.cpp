@@ -21,7 +21,29 @@ void Pressure::Init()// Func. Initialize, set into setup
 {
     pinMode(PinAn, INPUT); //SET PIN AS INPUT
 }
-
+float measure_pressure(uint8_t ref, float valor){
+        switch (ref)
+        {
+            
+        case 0: // KPA
+            return valor;
+            break;
+            
+        case 1: // BAR
+            return valor/100;
+            break;
+            
+        case 2: // PSI
+            return valor/6.895;
+            break;
+        case 3: // CMH2O
+            return valor*10.01972;
+            break;
+        default: // KPA
+            return valor;
+            break;
+        }
+}
 float Pressure::Modo(float valor,  uint8_t Model)// PRESSURE SENSOR MODEL
 {
     
@@ -32,7 +54,7 @@ float Pressure::Modo(float valor,  uint8_t Model)// PRESSURE SENSOR MODEL
          return ((((valor/1023)*VFSO)-0.2)/0.45); // SENSOR TRANSFER FUNCTION OBTAINED FROM DATASHEET
         break;
     case 1: // MXP3700
-            return NULL; // INSERT TRANSFER FUNCTION IN THE PLACE OF "NULL"
+            return 0.00; // INSERT TRANSFER FUNCTION IN THE PLACE OF "NULL"
         break;
     default:// MXP5010 //// ADD DEFINE IN .H FOR OTHER MODELS END INSERT FUNCTION TRANSFER IN CASE N+1
         return ((((valor/1023)*VFSO)-0.2)/0.45);
@@ -44,29 +66,21 @@ Get (GREATNESS, SENSOR MODEL)
 GREATNESS OF RETURN: KPA, BAR, PSI, CMH2O (DEFAULT: KPA)
 SENSOR MODEL: MXP5010 (DEFAULT MXP5010)
 */
+float Pressure::Get(){
+        uint8_t def_tag_pressure = 0;
+        int val = analogRead(PinAn); // GET ADC VALUE
+        float v_pressure = Modo(val, def_tag_pressure); // CALCULATE PRESSURE BASED MODEL
+        return measure_pressure(def_tag_pressure, v_pressure);
+}
+float Pressure::Get( uint8_t model){
+        int val = analogRead(PinAn); // GET ADC VALUE
+        float v_pressure = Modo(val, model); // CALCULATE PRESSURE BASED MODEL
+        uint8_t def_tag_pressure = 0;
+        return measure_pressure(v_pressure, def_tag_pressure);
+}
 float Pressure::Get( uint8_t model,  uint8_t gran){
         int val = analogRead(PinAn); // GET ADC VALUE
         float v_pressure = Modo(val, model); // CALCULATE PRESSURE BASED MODEL
-        switch (gran)
-        {
-            
-        case 0: // KPA
-            return v_pressure;
-            break;
-            
-        case 1: // BAR
-            return v_pressure/100;
-            break;
-            
-        case 2: // PSI
-            return v_pressure/6.895;
-            break;
-        case 3: // CMH2O
-            return v_pressure*10.01972;
-            break;
-        default: // KPA
-            return v_pressure;
-            break;
-        }
+        return measure_pressure(gran, v_pressure);
 
 }
