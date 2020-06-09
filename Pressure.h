@@ -33,9 +33,7 @@ class Pressure
             float pressure;
             float VFSO = 4.71;
             uint8_t PinAn;
-
             float Modo(float, uint8_t);
-            float measure_pressure(uint8_t, float);
 
 };
 #endif
