@@ -28,7 +28,6 @@ class Pressure
 
         private:
             int va__nalog;
-            float pressure;
             float VFSO = 4.71;
             uint8_t PinAn;
             float Modo(float, uint8_t);

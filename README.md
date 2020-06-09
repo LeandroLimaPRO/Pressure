@@ -28,7 +28,7 @@ void setup(){
 Sensor.Init();
 }
 ```
-- Use `get(MODEL,TYPE OF PRESSURE MEASUREMENT)` to obtain the pressure value. Do this by entering two information 1- Sensor model and 2 - response magnitude.
+- Use `Get(MODEL,TYPE OF PRESSURE MEASUREMENT)` to obtain the pressure value. Do this by entering two information 1- Sensor model and 2 - response magnitude.
 
 ```C++
 void loop(){
