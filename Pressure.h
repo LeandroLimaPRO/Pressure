@@ -13,7 +13,10 @@ category: Sensor Analogic Pressure
 class Pressure 
 {
         //### relacionado à definição de tipos de sensores
-        #define MXP5010 0
+        #define MPX5010 0
+        #define MPX5050 1
+        #define MPX5700 2
+        #define MPX5999 3
         //### relacionado à conversões
         #define KPA 0
         #define BAR 1
