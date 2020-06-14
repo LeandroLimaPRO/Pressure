@@ -8,5 +8,5 @@ void setup() {
 }
 
 void loop() {
-  Serial.println(P1.Get(MXP5010,PSI));
+  Serial.println(P1.Get(MPX5010,PSI));
 }

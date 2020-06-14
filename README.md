@@ -39,9 +39,9 @@ float value = Sensor.Get(MXP5010,BAR);
 #### Constants
 | MODELS        | TYPE  OF PRESSURE MEASUREMENT| OBS
 | --------------------- |:-------------:               |:-------------:|
-| MXP5010 👍      | KPA 👍            |   Default     |
-| MXP5050 💻      | BAR 👍            |               |
-| MXP3700 💻      | PSI 👍            |               |
+| MPX5010 👍      | KPA 👍            |   Default     |
+| MPX5050 👍      | BAR 👍            |               |
+| MPX5700 👍     | PSI 👍            |               |
 | -               | CMH2O 👍           |               |
 
  
@@ -55,4 +55,5 @@ legend:
 + Leandro L. (library developer)
 + Jessica Santos (mathematical modeler)
 + Valdioleno (electronic validation)
++ Rafael (insert TF of sensors)
 #### By Leandro L. N.
