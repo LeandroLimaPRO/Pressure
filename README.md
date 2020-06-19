@@ -11,14 +11,14 @@ library for reading differential pressure / gauge sensors from the manufacturer 
 ```C++
 #include "Pressure.h"
 
-Pressure Sensor(A0);
+Pressure Sensor(A0,MXP5010);
 ``` 
 Or with the help of a multimeter take the operating voltage from the microcontroller to calibrate the sensor:
 
 ```C++
 #include "Pressure.h"
 
-Pressure Sensor(A0, 4.85);
+Pressure Sensor(A0, MXP5010, 4.85);
 ```
 
 -  Insert the `Init ()` function in the arduino setup
@@ -32,7 +32,7 @@ Sensor.Init();
 
 ```C++
 void loop(){
-float value = Sensor.Get(MXP5010,BAR);
+float value = Sensor.Get(BAR);
 }
 ```
 ### Reference 
