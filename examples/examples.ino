@@ -1,6 +1,6 @@
 #include "Pressure.h"
 
-Pressure P1(A0);
+Pressure P1(A0, MPX5010);
 void setup() {
   // put your setup code here, to run once:
   P1.Init();
@@ -8,5 +8,5 @@ void setup() {
 }
 
 void loop() {
-  Serial.println(P1.Get(MPX5010,PSI));
+  Serial.println(P1.Get(PSI));
 }

@@ -8,24 +8,36 @@ category: Sensor Analogic Pressure
 */
 #include "Pressure.h"
 
-Pressure::Pressure(uint8_t pinAnalog)// obj Pressure, insert the analog pin
+Pressure::Pressure(uint8_t Pin___Analog)// obj Pressure, insert the analog pin
 {
-    PinAn = pinAnalog; // PIN ANALOGC FOR GET VALUE
+    Pin___An = Pin___Analog; // PIN ANALOGC FOR GET VALUE
 }
-Pressure::Pressure(uint8_t pinAnalog, double vfso)// obj Pressure, insert the analog pin, then measure the AD voltage with a multimeter, and enter the value.
+Pressure::Pressure(uint8_t Pin___Analog, uint8_t model___op)// obj Pressure, insert the analog pin, then measure the AD voltage with a multimeter, and enter the value.
 {
-    PinAn = pinAnalog; // PIN ANALOGC FOR GET VALUE
+    Pin___An = Pin___Analog; // PIN ANALOGC FOR GET VALUE
+    Modelo___op = model___op; // VOLTAGE OPERATION SENSOR.
+}
+Pressure::Pressure(uint8_t Pin___Analog, double vfso)// obj Pressure, insert the analog pin, then measure the AD voltage with a multimeter, and enter the value.
+{
+    Pin___An = Pin___Analog; // PIN ANALOGC FOR GET VALUE
     VFSO = vfso; // VOLTAGE OPERATION SENSOR.
+}
+Pressure::Pressure(uint8_t Pin___Analog, uint8_t model___op, double vfso)// obj Pressure, insert the analog pin, then measure the AD voltage with a multimeter, and enter the value.
+{
+    Pin___An = Pin___Analog; // PIN ANALOGC FOR GET VALUE
+    Modelo___op = model___op;
+    VFSO = vfso; // VOLTAGE OPERATION SENSOR.
+    
 }
 void Pressure::Init()// Func. Initialize, set into setup
 {
-    pinMode(PinAn, INPUT); //SET PIN AS INPUT
+    pinMode(Pin___An, INPUT); //SET PIN AS INPUT
 }
 
-float Pressure::Modo(float val___Analog,  uint8_t Model)// PRESSURE SENSOR MODEL
+float Pressure::Modo(float val___Analog)// PRESSURE SENSOR MODEL
 {
     
-    switch (Model)
+    switch (Modelo___op)
     {
         
     case 0: // MXP5010
@@ -50,33 +62,33 @@ Get (GREATNESS, SENSOR MODEL)
 GREATNESS OF RETURN: KPA, BAR, PSI, CMH2O (DEFAULT: KPA)
 SENSOR MODEL: MXP5010 (DEFAULT MXP5010)
 */
-float Pressure::Get(uint8_t model){
-    int val___Analog = analogRead(PinAn); // GET ADC VALUE
-    float v_pressure = Modo(val___Analog, model); // CALCULATE PRESSURE BASED MODEL
-    return v_pressure;
+float Pressure::Get(){
+    int val___Analog = analogRead(Pin___An); // GET ADC VALUE
+    float v___pressure = Modo(val___Analog); // CALCULATE PRESSURE BASED MODEL
+    return v___pressure;
 }
-float Pressure::Get( uint8_t model,  uint8_t gran){
-        int val___Analog = analogRead(PinAn); // GET ADC VALUE
-        float v_pressure = Modo(val___Analog, model); // CALCULATE PRESSURE BASED MODEL
+float Pressure::Get(uint8_t gran){
+        int val___Analog = analogRead(Pin___An); // GET ADC VALUE
+        float v___pressure = Modo(val___Analog); // CALCULATE PRESSURE BASED MODEL
         switch (gran)
         {
             
         case 0: // KPA
-            return v_pressure;
+            return v___pressure;
             break;
             
         case 1: // BAR
-            return v_pressure/100;
+            return v___pressure/100;
             break;
             
         case 2: // PSI
-            return v_pressure/6.895;
+            return v___pressure/6.895;
             break;
         case 3: // CMH2O
-            return v_pressure*10.01972;
+            return v___pressure*10.01972;
             break;
         default: // KPA
-            return v_pressure;
+            return v___pressure;
             break;
         }
 

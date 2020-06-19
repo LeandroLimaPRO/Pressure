@@ -23,17 +23,21 @@ class Pressure
         #define PSI 2
         #define CMH2O 3
         public:
-            Pressure(uint8_t);
-            Pressure(uint8_t, double);
+            Pressure(uint8_t); //pin
+            Pressure(uint8_t, uint8_t);// pin, model
+            Pressure(uint8_t, double); // pin, vsfo
+            Pressure(uint8_t, uint8_t, double); // pin, model, vsfo
             void Init();
-            float Get(uint8_t); // set model, for return value in KPA
-            float Get( uint8_t,  uint8_t); //set model and measure type
-
+            float Get(); // set model, for return value in KPA
+            float Get(uint8_t); // measure type
+            float GetBulk(uint8_t, float); // get volume (time, area)
         private:
-            int va__nalog;
-            float VFSO = 4.71;
-            uint8_t PinAn;
-            float Modo(float, uint8_t);
+            int va__nalog; //val sensor
+            float VFSO = 4.75; //default vsfo
+            uint8_t Pin___An; //pin analog
+            uint8_t Modelo___op; // save model sensor
+            uint8_t last__time; // save last temp
+            float Modo(float); // selected model
 
 };
 #endif
